@@ -124,7 +124,7 @@ object ChangingActorBehaviour extends App {
 
   case class Vote(candidate: String)
   case object VoteStatusRequest
-  class Citizen extends Actor {
+  /*class Citizen extends Actor {
     var candidate: Option[String] = None
     override def receive: Receive = {
       case Vote(c) => candidate = context.become(voted(Some(c)))
@@ -163,7 +163,7 @@ object ChangingActorBehaviour extends App {
   val alice = system.actorOf(Props[Citizen])
   val bob = system.actorOf(Props[Citizen])
   val charlie = system.actorOf(Props[Citizen])
-  val daniel = system.actorOf(Props[Citizen])
+  val daniel = system.actorOf(Props[Citizen])*/
 /*
   alice ! Vote("Martin")
   bob ! Vote("Charlie")
