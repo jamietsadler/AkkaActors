@@ -2,6 +2,7 @@ package actors
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
 import akka.event.Logging
+import com.typesafe.config.ConfigFactory
 
 object ActorLogging extends App{
 
@@ -28,5 +29,8 @@ object ActorLogging extends App{
 
   val simpleActor = system.actorOf(Props[ActorWithLogging])
   simpleActor ! "Logging simple messge by extending a trait"
+
+  val jsonConfig = ConfigFactory.load("json/jsonConfig.json")
+  println(s"json config: ${jsonConfig.getString("akka.loglevel")}")
 
 }
